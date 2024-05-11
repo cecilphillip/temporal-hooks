@@ -1,0 +1,14 @@
+### Post new order
+POST http://localhost:5000/fulfillment/run
+Content-Type: application/json
+
+{
+  "orderId": "1234", 
+  "customerEmail": "c@c.com"
+}
+
+### Get order status
+@workflowId = temporal-hooks-9a3af998ffc548e1b228e17bfea4b9f3
+@runId = fa91da02-29db-4dda-8b2d-92328138332d
+GET http://localhost:5000/fulfillment/status?workflowId={{workflowId}}&runId={{runId}}
+Accept: application/json
